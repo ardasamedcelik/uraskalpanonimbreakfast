@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Uras &hearts; Anonim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes heartbeat {
+            0% {
+                font-size: 12em;
+            }
+
+            20% {
+                font-size: 13em;
+            }
+
+            40% {
+                font-size: 12em;
+            }
+
+            60% {
+                font-size: 13em;
+            }
+
+            80% {
+                font-size: 12em;
+            }
+
+            100% {
+                font-size: 12em;
+            }
+        }
+
+        .heart {
+            animation: heartbeat 1s infinite;
+            color: #800000;
+            display: none;
+        }
+
+        .spacer {
+            width: 150px;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        let clicked = false;
+        handleClick = () => {
+            var x = document.getElementById('myAudio');
+            if (clicked == false) {
+                x.play();
+                x.volume = 1;
+                clicked = true;
+            } else {
+                x.pause();
+                clicked = false;
+            }
+            let h1 = document.getElementById('h1');
+            h1.style.color = '#800000';
+
+            let p1 = document.getElementById('p1');
+            p1.style.color = '#ffffff';
+
+            let p2 = document.getElementById('p2');
+            p2.style.color = '#ffffff';
+
+            let heart = document.getElementById('heart');
+            heart.style.display = 'unset';
+
+            let sikis = document.getElementById('sikis');
+            sikis.classList.remove('bottom-1/2');
+            sikis.classList.add('bottom-0');
+        };
+        const sexFunc = () => {
+            alert('Sikis');
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        };
+    </script>
+</head>
+
+<body style="background-color: #160000">
+    <div class="w-screen h-screen flex flex-col lg:flex-row items-center justify-evenly">
+        <p style="color: #160000" class="transition-all px-12 shrink-0" id="p1">
+            Aradığını her an bulursun burada, <br />
+            Görmek istersen dostunu,olursan darda, <br />
+            Sevgi, mutluluk, huzur aradığımda, <br />
+            Sen benimsin, Kırklareli. <br />
+        </p>
+        <h1 id="h1" style="color: #160000" class="md:text-7xl sm:text-6xl text-5xl pr-8">
+            Anonim <span class="spacer"></span> Uras
+        </h1>
+        <div id="heart" class="heart fixed">&hearts;</div>
+
+        <p style="color: #160000" class="transition-all px-12 shrink-0" id="p2">
+            Benim yarim bezden kilim<br />
+            Dokur Konya'dan Konya'ya<br />
+            Bülbül olmuş dertli kilim<br />
+            Şakır Konya'da Konya'da
+        </p>
+    </div>
+    <div>
+        <button onclick="handleClick()" id="sikis" style="color: white; background-color: #800000"
+            class="fixed bottom-1/2 py-5 text-4xl text-white w-full mx-auto transition-all w-full">
+            Love Me
+        </button>
+    </div>
+
+    <div class="fixed bottom-1 right-1">
+        <button onclick="sexFunc" target="_blank" class="text-gray-300 text-sm">powered by rana</button>
+    </div>
+    <div class="block">
+        <audio id="myAudio">
+            <source src="./isabel.ogg#t=00:00:12" type="audio/ogg" />
+            <source src="./isabel.mp3#t=00:00:12" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+
+</html>
